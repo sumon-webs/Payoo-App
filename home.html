@@ -57,15 +57,15 @@
                 <img src="./assets/opt-2.png" alt="">
                 <p>CashOut</p>
             </button>
-            <button class="btn flex-col py-12 btn-outline btn-primary">
+            <button onclick="showButton('transfer-money')" class="btn flex-col py-12 btn-outline btn-primary">
                 <img src="./assets/opt-3.png" alt="">
                 <p>Transfer Money</p>
             </button>
-            <button class="btn flex-col py-12 btn-outline btn-primary">
+            <button onclick="showButton('bonus-coupon')" class="btn flex-col py-12 btn-outline btn-primary">
                 <img src="./assets/opt-4.png" alt="">
                 <p> Get Bonus </p>
             </button>
-            <button class="btn flex-col py-12 btn-outline btn-primary">
+            <button onclick="showButton('pay-money')" class="btn flex-col py-12 btn-outline btn-primary">
                 <img src="./assets/opt-5.png" alt="">
                 <p>Pay Bill</p>
             </button>
@@ -101,7 +101,7 @@
         </div>
     </section>
 
-    <section id="add-money" class=" pt-8 hidden">
+    <section id="add-money" class=" pt-8 ">
         <h1 class=" text-2xl pb-2 font-bold">Add Money </h1>
         <div class="form ">
             <div class="card bg-base-100 w-full  shrink-0  mx-auto">
@@ -137,13 +137,95 @@
 
     <section id="transaction" class=" pt-8 hidden">
         <h1 class=" text-2xl pb-2 font-bold">Transaction History </h1>
-        <div id="transection-id" class="bg-base-100 p-2 rounded-[9px]">
+        <div id="transection-id" class="  space-y-3">
+            <!-- <div id="transection-id" class="bg-base-100 p-2 rounded-[9px] space-y-10">
+            </div> -->
         </div>
     </section>
+
+    <section id="transfer-money" class=" pt-8 hidden">
+        <h1 class=" text-2xl pb-2 font-bold">Transfer Money </h1>
+        <div class="form ">
+            <div class="card bg-base-100 w-full  shrink-0  mx-auto">
+                <div class="card-body">
+                    <fieldset class="fieldset">
+                        <label class="label text-black font-bold">User Acount Number</label>
+                        <input id="transfer-number" minlength="11" maxlength="11" type="number"
+                            class="input rounded-full bg-base-200 w-full"
+                            placeholder="Enter 11 digit bank acount number" />
+                        <br>
+                        <label class="label text-black font-bold">Amount</label>
+                        <input id="transfer-amount" type="number" class="input rounded-full bg-base-200 w-full"
+                            placeholder="Enter amount to transfer" />
+                        <br>
+                        <label class="label text-black font-bold">Pin Number</label>
+                        <input id="transfer-pin" maxlength="4" minlength="4" type="password"
+                            class="input rounded-full bg-base-200 w-full" placeholder="Enter  pin" />
+                        <button  id="transfer" class="btn btn-neutral mt-4 py-6  bg-primary rounded-full">Transfer
+                            Money</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bonus-coupon" class=" pt-8  hidden">
+        <h1 class=" text-2xl pb-2 font-bold">Get Bonus </h1>
+        <div class="form ">
+            <div class="card bg-base-100 w-full  shrink-0  mx-auto">
+                <div class="card-body">
+                    <fieldset class="fieldset">
+                        <label class="label text-black font-bold">Get Bonus Coupon</label>
+                        <input id="bonus-balance"  type="text"
+                            class="input rounded-full bg-base-200 w-full"
+                            placeholder="Enter your coupon" />
+                        <button  id="bonus-btn" class="btn btn-neutral mt-4 py-6  bg-primary rounded-full">Get Bonus</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pay-money" class=" pt-8 hidden">
+        <h1 class=" text-2xl pb-2 font-bold">Pay Bill </h1>
+        <div class="form ">
+            <div class="card bg-base-100 w-full  shrink-0  mx-auto">
+                <div class="card-body">
+                    <fieldset class="fieldset">
+                        <label class="label text-black font-bold">Select To Pay</label>
+                        <select id="select-bock" class="select w-full rounded-full bg-base-200">
+                            <option disabled selected>Select bock</option>
+                            <option>wifi</option>
+                            <option>water</option>
+                            <option>current</option>
+                        </select>
+                        <br>
+                        <label class="label text-black font-bold">Biller Account Number</label>
+                        <input id="pay-number" minlength="11" maxlength="11" type="number"
+                            class="input rounded-full bg-base-200 w-full"
+                            placeholder="Enter acount number" />
+                        <br>
+                        <label class="label text-black font-bold">Amount to Pay</label>
+                        <input id="pay-amount" type="number" class="input rounded-full bg-base-200 w-full"
+                            placeholder="Add Amount to Pay" />
+                        <br>
+                        <label class="label text-black font-bold">Pin Number</label>
+                        <input id="pay-pin" maxlength="4" minlength="4" type="password"
+                            class="input rounded-full bg-base-200 w-full" placeholder="Enter  pin" />
+                        <button id="pay-btn" class="btn btn-neutral mt-4 py-6  bg-primary rounded-full">Pay Bill</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <script src="./script/addmoney.js"></script>
     <script src="./script/machine.js"></script>
     <script src="./script/cashout.js"></script>
+    <script src="./script/transfer.js"></script>
+    <script src="./script/bonus.js"></script>
+    <script src="./script/pay.js"></script>
 </body>
 
 </html>

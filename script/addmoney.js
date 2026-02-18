@@ -36,12 +36,14 @@ document.getElementById("add-money-btn").addEventListener("click", function () {
     if (pin === "1234") {
         alert("Add money successful")
         setBalance(totalBalance)
-        
+
         const transection = document.getElementById("transection-id");
 
-        const newElement = document.createElement("p")
+        const newElement = document.createElement("div")
 
-        newElement.innerHTML = `Add Money Successful from ${bankName}. Account number: ${bankNumber}, at ${new Date} `
+        newElement.innerHTML = `<div id="transection-id" class="bg-base-100 p-2 rounded-[9px] space-y-10">
+            Add Money successful from ${bankName}. AC No: ${bankNumber}. At ${new Date} 
+        </div>`
 
         transection.append(newElement)
     } else {

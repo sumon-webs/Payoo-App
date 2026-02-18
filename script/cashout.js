@@ -55,11 +55,11 @@ document.getElementById("whithdraw-btn").addEventListener("click", function () {
 
     // Get Reserve amount
     const remainingBalance = getBalance ();
-    const totalBalance = remainingBalance - Number(cashOutAmount);
+    const totalBalance = Number(remainingBalance) - Number(cashOutAmount);
     console.log(totalBalance);
     if (totalBalance < 0) {
         alert("Invalid balance")
-        return;
+        return
     }
 
     // Get pin
@@ -68,6 +68,16 @@ document.getElementById("whithdraw-btn").addEventListener("click", function () {
     if (pin === "1234") {
         alert('Cash Out successful')
         setBalance(totalBalance)
+        
+        const transection = document.getElementById("transection-id");
+
+        const newElement = document.createElement("p")
+
+        newElement.innerHTML = `<div id="transection-id" class="bg-base-100 p-2 rounded-[9px] space-y-10">
+            Cash Out successful to ${cashOutNumber}. Amount ${cashOutAmount}. At ${new Date} 
+        </div>`
+
+        transection.append(newElement)
     }
     else {
         alert("Invalid pin")
