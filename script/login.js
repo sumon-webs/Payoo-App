@@ -8,7 +8,7 @@ document.getElementById("login-btn").addEventListener("click", function () {
     inputNumber.value = ''
     inputPin.value = ''
 
-    if (number === "01333581557" && pin === "1234") {
+    if (number.toString().length === 11 && number.startsWith('01')) {
         alert("Log in success")
         window.location.assign("./home.html")
     }
